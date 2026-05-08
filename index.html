@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giáo trình Công nghệ Công nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Thư viện hiển thị mô hình 3D của Google -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-6 shadow-md">
+        <h1 class="text-3xl font-bold">Hệ Thống Học Tập Công Nghệ Công Nghiệp</h1>
+        <p class="mt-2">Dành cho học sinh THPT - Kỷ nguyên 4.0</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Danh mục bài học -->
+            <aside class="col-span-1 bg-white p-4 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4 border-b pb-2">Chương trình học</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-blue-600 hover:underline">Chương 1: Thiết kế kỹ thuật</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Chương 2: Bản vẽ kỹ thuật</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Chương 3: Cơ khí chế tạo</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Chương 4: Công nghệ điện</a></li>
+                </ul>
+            </aside>
+
+            <!-- Nội dung bài giảng mẫu -->
+            <section class="col-span-2 bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-bold text-blue-700">Bài: Hình chiếu trục đo</h2>
+                <p class="my-4">Quan sát mô hình 3D dưới đây để hiểu cách hình thành các hình chiếu:</p>
+                
+                <!-- Khu vực hiển thị mô hình 3D -->
+                <div class="w-full h-80 bg-gray-200 rounded-lg overflow-hidden border">
+                    <model-viewer 
+                        src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" 
+                        alt="Mô hình kỹ thuật 3D" 
+                        auto-rotate camera-controls 
+                        style="width: 100%; height: 100%;">
+                    </model-viewer>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold italic text-gray-600">Ghi chú bài học:</h3>
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Góc trục đo xiên cân: p = q = r = 1.</li>
+                        <li>Góc giữa các trục Ox, Oy, Oz là 120 độ.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
