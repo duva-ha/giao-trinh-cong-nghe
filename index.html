@@ -12,21 +12,21 @@
         :root { --primary: #2563eb; --secondary: #10b981; --accent: #8b5cf6; }
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
 
-        /* Animation cho Slide */
+        /* Animation mượt mà khi chuyển Slide */
         .slide-content { display: none; opacity: 0; transform: scale(0.95); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .slide-active { display: flex !important; opacity: 1; transform: scale(1); }
 
-        /* Accordion Menu */
+        /* Kiểu dáng cho Accordion Menu */
         .submenu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: rgba(30, 41, 59, 0.5); }
         .submenu.open { max-height: 2500px; transition: max-height 0.6s ease-in; }
         .rotate-icon { transition: transform 0.3s ease; }
         .is-open { transform: rotate(90deg); }
 
-        /* Scrollbar tinh tế */
+        /* Thanh cuộn nhỏ gọn (Custom Scrollbar) */
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
 
-        /* Tối ưu hóa giao diện Fullscreen */
+        /* Tối ưu hóa giao diện hiển thị trên máy chiếu lớp học khi bật Fullscreen */
         #presentation-zone:fullscreen { 
             background: #ffffff !important; 
             padding: 3rem; 
@@ -41,6 +41,7 @@
             border-color: #e2e8f0 !important;
         }
         
+        /* Hiệu ứng rê chuột và kích hoạt bài học */
         .lesson-item { transition: all 0.2s ease; }
         .lesson-item:hover { background: rgba(37, 99, 235, 0.1); color: #60a5fa; }
         .active-lesson { border-left: 4px solid var(--primary); background: rgba(37, 99, 235, 0.15) !important; color: #60a5fa !important; font-weight: bold; }
@@ -59,11 +60,11 @@
 
         <nav class="flex-1 overflow-y-auto custom-scroll p-3 space-y-3">
             
-            <!-- DANH MỤC 1: CHỌN KHỐI (HIỂN THỊ TRỰC TIẾP BÀI HỌC) -->
+            <!-- DANH MỤC 1: HỆ THỐNG BÀI HỌC THEO KHỐI -->
             <div class="space-y-1">
                 <div class="px-3 py-2 text-[10px] font-black text-slate-500 uppercase tracking-widest"><i class="fas fa-layer-group mr-1"></i> Hệ thống bài học</div>
                 
-                <!-- Khối 10 -->
+                <!-- KHỐI CÔNG NGHỆ 10 -->
                 <div>
                     <button onclick="toggleMenu('k10-list')" class="w-full flex items-center justify-between p-2.5 hover:bg-slate-800 rounded-xl transition text-slate-300 font-semibold text-xs">
                         <div class="flex items-center gap-2.5"><i class="fas fa-graduation-cap text-blue-400"></i> CÔNG NGHỆ 10</div>
@@ -95,7 +96,7 @@
                     </div>
                 </div>
 
-                <!-- Khối 11 -->
+                <!-- KHỐI CÔNG NGHỆ 11 -->
                 <div>
                     <button onclick="toggleMenu('k11-list')" class="w-full flex items-center justify-between p-2.5 hover:bg-slate-800 rounded-xl transition text-slate-300 font-semibold text-xs">
                         <div class="flex items-center gap-2.5"><i class="fas fa-graduation-cap text-emerald-400"></i> CÔNG NGHỆ 11</div>
@@ -130,19 +131,49 @@
                     </div>
                 </div>
 
-                <!-- Khối 12 -->
+                <!-- KHỐI CÔNG NGHỆ 12 (CẬP NHẬT ĐẦY ĐỦ 26 BÀI CHUẨN) -->
                 <div>
                     <button onclick="toggleMenu('k12-list')" class="w-full flex items-center justify-between p-2.5 hover:bg-slate-800 rounded-xl transition text-slate-300 font-semibold text-xs">
                         <div class="flex items-center gap-2.5"><i class="fas fa-graduation-cap text-purple-400"></i> CÔNG NGHỆ 12</div>
                         <i class="fas fa-chevron-right text-[9px] rotate-icon" id="icon-k12-list"></i>
                     </button>
                     <div id="k12-list" class="submenu rounded-xl ml-2 mt-1 space-y-0.5 border-l border-slate-800/60 pl-1">
-                        <div onclick="loadLesson('k12b1', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 1: Linh kiện thụ động</div>
+                        <!-- PHẦN MỘT -->
+                        <div class="px-2.5 py-1 text-[9px] font-bold text-blue-400 uppercase tracking-wider bg-blue-950/20 rounded">PHẦN 1: CÔNG NGHỆ ĐIỆN</div>
+                        <div onclick="loadLesson('k12b1', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 1: Tổng quan về kĩ thuật điện</div>
+                        <div onclick="loadLesson('k12b2', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 2: Ngành nghề trong kĩ thuật điện</div>
+                        <div onclick="loadLesson('k12b3', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 3: Mạch điện xoay chiều ba pha</div>
+                        <div onclick="loadLesson('k12b4', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 4: Hệ thống điện quốc gia</div>
+                        <div onclick="loadLesson('k12b5', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 5: Sản xuất điện năng</div>
+                        <div onclick="loadLesson('k12b6', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 6: Mạng điện sản xuất quy mô nhỏ</div>
+                        <div onclick="loadLesson('k12b7', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 7: Mạng điện hạ áp dùng trong sinh hoạt</div>
+                        <div onclick="loadLesson('k12b8', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 8: Hệ thống điện trong gia đình</div>
+                        <div onclick="loadLesson('k12b9', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 9: Thiết bị điện trong gia đình</div>
+                        <div onclick="loadLesson('k12b10', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 10: Thiết kế và lắp đặt mạch điều khiển</div>
+                        <div onclick="loadLesson('k12b11', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 11: An toàn điện</div>
+                        <div onclick="loadLesson('k12b12', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 12: Tiết kiệm điện năng</div>
+                        
+                        <!-- PHẦN HAI -->
+                        <div class="px-2.5 py-1 text-[9px] font-bold text-purple-400 uppercase tracking-wider bg-purple-950/20 rounded mt-2">PHẦN 2: CÔNG NGHỆ ĐIỆN TỬ</div>
+                        <div onclick="loadLesson('k12b13', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 13: Khái quát về kĩ thuật điện tử</div>
+                        <div onclick="loadLesson('k12b14', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 14: Ngành nghề & dịch vụ điện tử</div>
+                        <div onclick="loadLesson('k12b15', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 15: Điện trở, tụ điện và cuộn cảm</div>
+                        <div onclick="loadLesson('k12b16', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 16: Diode, transistor và mạch tích hợp IC</div>
+                        <div onclick="loadLesson('k12b17', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 17: TH: Mạch phát hiện dòng điện xoay chiều</div>
+                        <div onclick="loadLesson('k12b18', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 18: Giới thiệu về điện tử tương tự</div>
+                        <div onclick="loadLesson('k12b19', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 19: Khuếch đại thuật toán</div>
+                        <div onclick="loadLesson('k12b20', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 20: TH: Mạch khuếch đại đảo</div>
+                        <div onclick="loadLesson('k12b21', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 21: Tín hiệu số và các cổng logic cơ bản</div>
+                        <div onclick="loadLesson('k12b22', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 22: Mạch xử lí tín hiệu trong điện tử số</div>
+                        <div onclick="loadLesson('k12b23', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 23: TH: Lắp ráp, kiểm tra mạch báo cháy</div>
+                        <div onclick="loadLesson('k12b24', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 24: Khái quát về vi điều khiển</div>
+                        <div onclick="loadLesson('k12b25', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 25: Bo mạch lập trình vi điều khiển</div>
+                        <div onclick="loadLesson('k12b26', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Bài 26: TH: Thiết kế mạch tự động điều chỉnh LED</div>
                     </div>
                 </div>
             </div>
 
-            <!-- DANH MỤC 2: CHUYÊN ĐỀ (LOGIC HIỂN THỊ GIỮ NGUYÊN) -->
+            <!-- DANH MỤC 2: HỆ THỐNG CHUYÊN ĐỀ -->
             <div class="space-y-1 pt-2 border-t border-slate-800/60">
                 <div class="px-3 py-2 text-[10px] font-black text-slate-500 uppercase tracking-widest"><i class="fas fa-book-open mr-1"></i> Chuyên đề mở rộng</div>
                 <div>
@@ -151,14 +182,13 @@
                         <i class="fas fa-chevron-right text-[9px] rotate-icon" id="icon-cd-list"></i>
                     </button>
                     <div id="cd-list" class="submenu rounded-xl ml-2 mt-1 space-y-0.5 border-l border-slate-800/60 pl-1">
-                        <!-- Cấu trúc gọi hàm loadLesson tương tự khi anh khai báo trong data.js -->
                         <div onclick="loadLesson('cd1', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Chuyên đề 1: Trí tuệ nhân tạo (AI)</div>
                         <div onclick="loadLesson('cd2', this)" class="lesson-item p-2 text-[11px] cursor-pointer rounded">Chuyên đề 2: Đô thị thông minh</div>
                     </div>
                 </div>
             </div>
 
-            <!-- DANH MỤC 3: ÔN LUYỆN TRẮC NGHIỆM (LIÊN KẾT NGOÀI) -->
+            <!-- DANH MỤC 3: HỆ THỐNG ĐỀ ÔN LUYỆN TRẮC NGHIỆM -->
             <div class="space-y-1 pt-2 border-t border-slate-800/60">
                 <div class="px-3 py-2 text-[10px] font-black text-slate-500 uppercase tracking-widest"><i class="fas fa-user-check mr-1"></i> Kiểm tra & Đánh giá</div>
                 <div>
@@ -167,7 +197,6 @@
                         <i class="fas fa-chevron-right text-[9px] rotate-icon" id="icon-exam-list"></i>
                     </button>
                     <div id="exam-list" class="submenu rounded-xl ml-2 mt-1 space-y-0.5 border-l border-slate-800/60 pl-1">
-                        <!-- Đường dẫn liên kết trực tiếp sang trang trắc nghiệm của anh -->
                         <a href="exam_k10.html" target="_blank" class="lesson-item p-2 text-[11px] cursor-pointer rounded flex items-center justify-between pr-4">
                             <span>Đề ôn tập Khối 10</span> <i class="fas fa-external-link-alt text-[9px] text-slate-500"></i>
                         </a>
@@ -211,7 +240,7 @@
         </header>
 
         <section id="presentation-zone" class="flex-1 bg-white rounded-[2rem] shadow-2xl relative overflow-hidden border border-slate-100 ring-8 ring-white">
-            <!-- Màn hình chờ -->
+            <!-- Màn hình chờ (Welcome Screen) -->
             <div id="welcome-screen" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-white to-slate-50 transition-opacity duration-500 z-20">
                 <div class="relative mb-8">
                     <div class="absolute -inset-4 bg-blue-500/10 rounded-full blur-2xl animate-pulse"></div>
@@ -236,7 +265,7 @@
         let currentSlides = [];
         let currentIndex = 0;
 
-        // Xử lý đóng mở Menu đa cấp (Chọn Khối / Chuyên đề / Ôn luyện)
+        // Xử lý đóng mở Menu đa cấp không chồng chéo
         function toggleMenu(id) {
             const menu = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
@@ -245,15 +274,16 @@
             if (icon) icon.classList.toggle('is-open');
         }
 
-        // Nạp bài giảng số
+        // Nạp dữ liệu tài nguyên số an toàn
         function loadLesson(key, element) {
             const data = (typeof lessonData !== 'undefined') ? lessonData[key] : null;
-            if (!data) return alert("Dữ liệu phần này chưa được cấu hình trong file data.js!");
+            if (!data) return alert("Dữ liệu bài này chưa được cấu hình hoặc chưa bổ sung vào file data.js!");
 
-            // Đánh dấu thẻ active
+            // Cập nhật trạng thái Active trên thanh bên
             document.querySelectorAll('.lesson-item').forEach(el => el.classList.remove('active-lesson'));
             if (element) element.classList.add('active-lesson');
 
+            // Ẩn màn hình chờ mượt mà
             const welcome = document.getElementById('welcome-screen');
             if (welcome && welcome.style.display !== 'none') {
                 welcome.style.opacity = '0';
@@ -268,7 +298,7 @@
             renderSlides();
         }
 
-        // Hiển thị tài liệu slide lên khung chiếu
+        // Tạo cấu trúc cây và kết xuất slide lên khung trình chiếu
         function renderSlides() {
             const container = document.getElementById('slides-container');
             if (!container) return;
@@ -294,17 +324,18 @@
         function nextSlide() { if (currentIndex < currentSlides.length - 1) { currentIndex++; renderSlides(); } }
         function prevSlide() { if (currentIndex > 0) { currentIndex--; renderSlides(); } }
         
+        // Quản lý trạng thái phóng to toàn màn hình máy chiếu
         function toggleFullScreen() {
             const elem = document.getElementById('presentation-zone');
             if (!elem) return;
             if (!document.fullscreenElement) {
-                elem.requestFullscreen().catch(err => alert("Lỗi khi mở toàn màn hình"));
+                elem.requestFullscreen().catch(err => alert("Lỗi hệ thống: Không thể khởi chạy chế độ toàn màn hình."));
             } else {
                 document.exitFullscreen();
             }
         }
 
-        // Lắng nghe sự kiện bàn phím điều hướng bài giảng
+        // Lắng nghe phím tắt điều hướng lớp học toàn diện
         document.addEventListener('keydown', (e) => {
             if (e.key === " " && currentSlides.length > 0) { e.preventDefault(); }
             if (e.key === "ArrowRight" || e.key === " ") nextSlide();
