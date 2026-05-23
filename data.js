@@ -5,7 +5,7 @@ const lessonData = {
             { h: "Khái niệm Công nghệ", p: "Công nghệ là giải pháp...", img: "url_anh.jpg" },
             { h: "Vai trò", p: "Cải thiện chất lượng cuộc sống..." }
         ]
-    }
+    },
     "k12b15": {
         "title": "BÀI 15: ĐIỆN TRỞ, TỤ ĐIỆN VÀ CUỘN CẢM",
         "slides": [
